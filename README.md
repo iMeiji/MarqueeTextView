@@ -22,7 +22,7 @@ allprojects {
 Step 2. Add the dependency
 ```
 dependencies {
-    compile 'com.github.iMeiji:MarqueeTextView:0.1'
+    implementation 'com.github.iMeiji:MarqueeTextView:0.1'
 }
 ```
 
