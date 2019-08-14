@@ -5,8 +5,8 @@ apply plugin: 'com.github.dcendents.android-maven'
 group = 'com.github.iMeiji'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion '27.0.3'
+    compileSdkVersion 29
+    buildToolsVersion '29.0.2'
     defaultConfig {
         minSdkVersion 14
     }
@@ -17,5 +17,5 @@ android {
 }
 
 dependencies {
-    api 'com.android.support:support-annotations:27.1.0'
+    api 'androidx.annotation:annotation:1.1.0'
 }

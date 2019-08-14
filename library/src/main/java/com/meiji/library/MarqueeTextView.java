@@ -3,11 +3,10 @@ package com.meiji.library;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.IntDef;
-import android.support.annotation.NonNull;
+import androidx.annotation.IntDef;
+import androidx.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
@@ -60,10 +59,6 @@ public class MarqueeTextView extends TextView implements OnClickListener {
      * view的宽度+文字长度*2
      */
     private float mViewWidthPlusTwoTextLength;
-    /**
-     * 绘图样式
-     */
-    private Paint mPaint;
     /**
      * 文本内容
      */
@@ -130,8 +125,6 @@ public class MarqueeTextView extends TextView implements OnClickListener {
     }
 
     public MarqueeTextView create() {
-        this.mPaint = getPaint();
-//        switchText();
         return this;
     }
 
@@ -151,7 +144,7 @@ public class MarqueeTextView extends TextView implements OnClickListener {
         }
 
         mText = mStringList.get(mTextPos).trim();
-        mTextLength = mPaint.measureText(mText);
+        mTextLength = getPaint().measureText(mText);
         mViewWidth = getWidth();
         mViewWidthPlusTextLength = mViewWidth + mTextLength;
         mViewWidthPlusTwoTextLength = mViewWidth + mTextLength * 2;
@@ -181,16 +174,18 @@ public class MarqueeTextView extends TextView implements OnClickListener {
 
     @Override
     public void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+
         if (TextUtils.isEmpty(mText)) {
             return;
         }
 
         switch (mOrientation) {
             case TOLEFT:
-                canvas.drawText(mText, mViewWidthPlusTextLength - mX, mY, mPaint);
+                canvas.drawText(mText, mViewWidthPlusTextLength - mX, mY, getPaint());
                 break;
             case TORIGHT:
-                canvas.drawText(mText, mX, mY, mPaint);
+                canvas.drawText(mText, mX, mY, getPaint());
                 break;
         }
 
