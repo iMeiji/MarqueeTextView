@@ -1,5 +1,5 @@
 ## MarqueeTextView
-[![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14) [![](https://jitpack.io/v/iMeiji/SetupWizardLayout.svg)](https://jitpack.io/#iMeiji/SetupWizardLayout)
+[![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14) [![](https://jitpack.io/v/iMeiji/MarqueeTextView.svg)](https://jitpack.io/#iMeiji/MarqueeTextView)
 
 单行文本跑马灯控件，支持设置文字滚动速度、滚动方向、点击暂停滚动。
 
@@ -22,7 +22,7 @@ allprojects {
 Step 2. Add the dependency
 ```
 dependencies {
-    implementation 'com.github.iMeiji:MarqueeTextView:0.1'
+    implementation 'com.github.iMeiji:MarqueeTextView:0.2'
 }
 ```
 
